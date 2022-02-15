@@ -1,0 +1,157 @@
+{%load static%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Next Coder</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'nextCoder/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body style="background-color: f1f1f1; width: 100vw; overflow-x: hidden;">
+        </div>
+
+            <div>
+                <img class="background_image" src="{% static 'nextCoder/background_image.jpg' %}" alt="background_image">
+            </div>
+
+            <div id="main_title">
+                <h1 class="page_title">NEXT CODER</h1>
+            </div>
+
+            <div class="slogan">
+                <h1 class="subtitle" data-aos="fade-up">Learning to code made easier than ever</h1>
+            </div>
+
+            <div class="arrow" data-aos="fade-down">&#8595;</div>
+
+            <div class="TODO"></div>
+
+
+            <div class="menu" style="display: block;">
+                <div class="menu_before">
+                    <div class="menu_icon" id="menu1"></div>
+                    <div class="menu_icon" id="menu2"></div>
+                    <div class="menu_icon" id="menu3"></div>
+                </div>
+                <div class="menu_content" style="display: none;">
+                    <h4 id="first_item" class="menu_item"><a href="{% url 'talks' %}" class="menu_link">TALKS</a></h4>
+                    <h4 class="menu_item" id="second_item"><a href="{% url 'my_talks' %}" class="menu_link">ENROLLED TALKS</a></h4>
+                    <h4 class="menu_item" id="third_item"><a href="{% url 'new_talk' type=1%}" class="menu_link">CREATE TALK</a></h4>
+
+                    {% if user.is_authenticated %}
+                    <h4 class="menu_item fourth_item"><a href="{% url 'logout' %}" class="menu_link">LOGOUT</a></h4>
+                    {% else %}
+                    <h4 class="menu_item fourth_item"><a href="{% url 'login'%}" class="menu_link">LOGIN/REGISTER</a></h4>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    
+
+        <!-- The code until the next comment was copied (later modified) from https://stackoverflow.com/questions/53973898/image-right-text-left-works-but-image-left-text-right-doesnt-for-website/53974066-->
+        <div class="containerabc et_pb_row et_pb_row_0" data-aos="fade-right">                 
+            <div class="et_pb_column et_pb_column_4_4 containerabcolumn et_pb_column_0">
+                <div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left containerab et_pb_text_0">
+                    
+                    <div class="a">
+                        <h4 style="margin-right: 20px;">WHAT IS NEXT CODER</h4>
+                        <p style="margin-right: 30px;">Next coder is a platform in which people can learn to code and help others to do so. It’s a collaborative, <strong>non-profit</strong> app in which you can attend (or hold) <strong>presentations</strong> about different tech-related content as well as private free <strong>tutoring</strong>.</p>
+                    </div>
+                    <div class="b" style="margin-right: 35px;">
+                        <img src="{% static 'nextCoder/image3.jpg' %}" class="alignnone size-full wp-image-31544" srcset="{% static 'nextCoder/image3.jpg' %}">
+                    </div>
+
+                </div>
+            </div>                         
+        </div> 
+
+        <div class="containerabc et_pb_row et_pb_row_0" data-aos="fade-left">
+            <div class="et_pb_column et_pb_column_4_4 containerabcolumn et_pb_column_0">                    
+                <div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left containerab et_pb_text_0">
+
+                    <div class="b" id="second_image">
+                        <img src="{% static 'nextCoder/image2.jpg' %}" class="alignnone size-full wp-image-31544" srcset="{% static 'nextCoder/image2.jpg' %}">
+                    </div>         
+                    <div class="a" id="second_text">
+                        <h4>OUR MISSION</h4>
+                        <p>Our goal is to provide access to a high-quality education to everyone. Unfortunately, most people will never try out programming as it’s not included in most educating systems. Therefore, next coder try to keep it easy to all of the people who are willing to give it a try. We tried to make a collaborative environment  to learn, teach and have fun all at the same time.  </p>
+                    </div>
+
+                </div>
+            </div> 
+        </div> 
+
+        <div class="containerabc et_pb_row et_pb_row_0" data-aos="fade-right">                 
+            <div class="et_pb_column et_pb_column_4_4 containerabcolumn et_pb_column_0">
+                <div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left containerab et_pb_text_0">
+                    
+                    <div class="a">
+                        <h4 style="margin-right: 20px;">WHY NEXT CODER</h4>
+                        <p style="margin-right: 30px;">Learning to code can be overwhelming at first, thus we have created a platform in which you can always be helped by industry-professionals to whom you can ask anything. Moreover, you should make sure to help others as well to keep next coder a cooperative environment.</p>
+                    </div>
+                    <div class="b" style="margin-right: 35px;">
+                        <img src="{% static 'nextCoder/image4.jpg' %}" class="alignnone size-full wp-image-31544" srcset="{% static 'nextCoder/image4.jpg' %}">
+                    </div>
+
+                </div>
+            </div>                         
+        </div>
+        <!---->
+                    
+
+        <footer class="footer">
+            <address>
+                Made by Samuel Molina Perales.
+                Contact me at: <a href="mailto:smolinaperales@gmail.com">smolinaperales@gmail.com</a>
+            </address>
+            <p class="copy">Next coder. All rights deserved &#169; 2021</p>
+        </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          offset:200,
+          duration:1000
+      });
+
+        document.addEventListener("DOMContentLoaded", function(){
+            //alert("This is a page currently under development. This is the beta which may contain bugs. In case something bad is noticed, please send an email to smolinaperales@gmail.com")
+            let menu_button = document.querySelector(".menu_before");
+            let menu = document.querySelector(".menu");
+            let content = document.querySelector(".menu_content");
+
+            menu_button.addEventListener("click", function(){
+                if (menu_button.classList.contains("change")){
+                    menu_button.classList.remove("change");
+                    
+                    document.querySelectorAll(".menu_icon").forEach(function(div){
+                        div.style.background = "black";
+                    });
+
+                    menu.classList.remove("active");
+                    content.style.display = "none";
+                    
+                } else {
+                    menu_button.classList.add("change");
+                    
+                    document.querySelectorAll(".menu_icon").forEach(function(div){
+                        div.style.background = "#E5E5E5";
+                    });
+
+                    menu.classList.add("active");
+                    content.style.display = "flex";
+                    
+                } 
+            });
+        });
+    </script>
+
+    </body>
+
+</html>

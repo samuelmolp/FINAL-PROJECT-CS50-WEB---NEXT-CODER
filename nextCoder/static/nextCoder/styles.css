@@ -1,0 +1,863 @@
+.background_image {
+    width: 100vw;
+    height: 100vh;
+    filter: blur(12px);
+    position: relative;
+}
+.background_image2 {
+    width: 100vw;
+    height: 75vh;
+    filter: blur(12px);
+    position: relative;
+}
+
+
+.first_div {
+    margin-top: 11vh;
+}
+
+.text_one {
+    text-align: justify;
+    font-family: Shanti;
+}
+
+.main_grid {
+    display: grid;
+    grid-template-columns: 40% 50%;
+}
+
+
+.image {
+    width: 85%;
+    height: 35vh;
+    padding-left: 7%;
+}
+
+
+.TODO {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+
+    background-color: grey;
+    width: 115px;
+    height: 58px;
+
+    text-align: center;
+}
+
+
+
+.footer {
+    padding-top: 5px;
+    
+    margin-top: 90px;
+    background-color: grey;
+    width: 100%;
+    box-shadow: 0 50vh 0 50vh grey;
+    text-align: center;
+}
+
+
+
+.footer_general {
+    padding-top: 5px;
+
+    height: 50px;
+    margin-top: 20px;
+    
+    background-color: grey;
+    width: 100%;
+    box-shadow: 0 50vh 0 50vh grey;
+    text-align: center;
+}
+
+
+
+.copy {
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+address {
+    margin-top: 15px;
+}
+
+
+#main_title {
+    position: absolute;
+    
+    top: 23vh;
+    width: 100%;
+    text-align: center;
+}
+
+.page_title {
+    font-size: 80px;
+    line-height: 122px;
+    color: rgb(182, 182, 182);
+    font-family: Shanti;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.slogan {
+    position: absolute;
+
+    top: 37vh;
+    width: 100%;
+    text-align: center;
+
+}
+
+.subtitle {
+    font-family: Shanti;
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 40px;
+    line-height: 122px;
+}
+
+
+.arrow {
+    font-size: 75px;
+    position: absolute;
+
+    top: 62vh;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+#menu1 {
+    position: absolute;
+    top: 7.5%;
+}
+
+#menu2 {
+    position: absolute;
+    top: 9.5%;
+}
+
+#menu3 {
+    position: absolute;
+    top: 11.5%;
+}
+
+/* following three classes copied from https://www.w3schools.com/howto/howto_css_menu_icon.asp*/
+.change #menu1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    top:5%;
+  }
+  
+.change #menu2 {opacity: 0; top: 7%;}
+  
+.change #menu3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    top:9%;
+}
+
+
+.menu {
+    position: absolute;
+    width: 22vw;
+    height: 100vh;
+    top: 0vh;
+    left: 80vw;
+    text-align: center;
+}
+
+.active {
+    backdrop-filter: blur(6px);
+    background:rgb(63, 63, 63, 0.5);
+}
+
+
+.active .menu_icon {
+    margin-left: 160px;
+}
+
+
+.menu_icon {
+    position: absolute;
+    width: 40px;
+    height: 7px;
+    background-color: black;
+    cursor: pointer;
+    margin-left: 110px;
+}
+
+.menu_item {
+    position: absolute;
+    font-size: x-large;
+    color: blue;
+}
+
+.menu_link:hover {
+    color:#000000;
+    font-weight: bold;
+}
+
+.menu_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+#first_item {
+    top: 25vh;
+}
+
+#second_item {
+    top: 40vh;
+}
+
+#third_item {
+    top: 55vh;
+}
+
+.fourth_item {
+    top: 70vh;
+}
+
+
+.loginTitle {
+    margin-top: 35px;
+    margin-left: 20px;
+    font-family: Shanti;
+}
+
+.login_input {
+    width: 80vw;
+    margin-left: 10vw;
+}
+
+.login_form {}
+
+.rectangles {
+    padding: 10px;
+    width: 110px;
+    border: 1px solid black;
+    border-radius: 20%;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container {
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#tags1_list {
+    margin-top: 35px;
+}
+
+#title {
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+#tags_descr {
+    font-size: large;
+    margin-top: 25px;
+}
+
+.tags_text {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.new_tag {
+    background-color: rgba(236, 148, 145, 0.815);
+}
+
+#finish {
+    background-color: #7e7ef7;
+    border-radius: 20%;
+    padding: 10px;
+    font-size: large;
+}
+
+#finish_div {
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.notClicked {
+    background-color: #f8c25f;
+}
+
+.clicked {
+    background-color: #7e7ef7;
+}
+
+.navigation_var {
+    background: rgba(16, 15, 15, 0.2);
+    width: 100vw;
+    height: 15vh;
+}
+
+.logo {
+    background: grey;
+    width: 10%;
+    height: 75%;
+    text-align: center;
+}
+
+#first_form {
+    width: 100%;
+}
+#first_form * {
+    vertical-align: middle;
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+
+textarea {
+    white-space: pre-wrap;
+}
+
+/* The code until the next comment is copied (later modified) from https://stackoverflow.com/questions/53973898/image-right-text-left-works-but-image-left-text-right-doesnt-for-website/53974066 */
+
+.containerabc {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 70px;
+}    
+
+.containerabcolumn {
+    margin: 0 auto !important;
+    max-width: 1080px;
+    float: none !important;
+    position: static !important;
+}
+
+.containerabc .et_pb_text {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.a {
+    -webkit-flex-basis: 41.667%;
+    -ms-flex-preferred-size: 41.667%;
+    flex-basis: 41.667%;
+    max-width: 50%;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    padding-right: 50px;
+    padding-top: 60px;
+    text-align: justify;
+}
+
+.b {
+    -webkit-flex-basis: 58.333%;
+    -ms-flex-preferred-size: 58.333%;
+    flex-basis: 58.333%;
+    max-width: 50%;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    flex-basis: auto;
+    flex-basis: auto;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.b img {
+    width: 95%;
+    min-width: 575px;
+    position: relative;
+    overflow: hidden;
+    height: 62vh;
+}
+
+#second_text {
+    padding-left: 60px;
+}
+
+@media only screen and (max-width: 1050px){
+
+    .menu_icon {
+        margin-left: 80vw;
+    }
+
+    .active .menu_icon {
+        margin-left: 80vw;
+    }
+
+    .menu {
+        width: 100vw;
+        left: 0px;
+    }
+
+    .menu_content {
+        margin-left: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) 
+{   
+    .containerabc .et_pb_text 
+    {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .a 
+    {
+        margin: unset;
+        max-width: 100%;
+        padding: 20px;
+        position: unset;
+    }
+
+    .b
+    {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .b img 
+    {
+        width: 100%;
+        min-width: unset;
+        height: 40vh;
+    }
+
+    .background_image {
+        height: 60vh;
+    }
+
+    .containerabc {
+        margin-top: 40px;
+    }
+
+    #second_text {
+        padding-left: 20px;
+        margin-right: 30px;
+    }
+
+    #second_image {
+        margin-right: 35px;
+    }
+
+    #main_title {
+        top: 17vh;
+    }
+
+    .slogan {
+        top: 22vh;
+    }
+
+    .subtitle {
+        font-size: large;
+    }
+
+    .page_title {
+        font-size: 35px;
+    }
+
+    .TODO {
+        width: 65px;
+        height: 45px;
+    }
+
+    .arrow {
+        font-size: 45px;
+        position: absolute;
+    
+        top: 36vh;
+    }
+
+
+}
+
+/* END */
+
+
+.my_navbar {
+    background-color: grey;
+    width: 100vw;
+    height: 11vh;
+    position: relative;
+}
+
+.TODO2 {
+    background-color: whitesmoke;
+    height: 6vh;
+    width: 7vw;
+    margin-left: 4vw;
+    margin-top: 3vh;
+    position: absolute;
+    text-align: center;
+}
+
+.nav_content {
+    text-align: end;
+}
+
+.nav_element {
+    margin-right: 10px;
+}
+
+.mobile_navIcon {
+    height: 10px;
+    position: absolute;
+    margin-left: end;
+}
+
+#search_form {
+    background: rgba(82, 78, 125, 0.53);
+    margin-bottom: 20px;
+    height: 30vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.suggestions {
+    background-color: rgb(170, 169, 169);
+    
+    width: 50vw;
+    margin-left: 26vw;
+    border-radius: 10px;
+}
+
+.suggestions_list {
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+#search_title {
+    border-radius: 50px;
+    border:2px solid grey;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 50vw;
+    height: 35px;
+    text-align: center;
+}
+#search_title:focus {
+    outline: none;
+    border: 2px solid grey;
+}
+
+.talks_content {
+    margin-left: 20px;
+}
+
+.all_results {
+    color: rgb(233, 232, 232);
+}
+
+.all_results:hover{
+    font-weight: bold;
+}
+
+.talks_title {
+    margin-left: 35px;
+    margin-top: 20px;
+    font-family: Shanti;
+}
+
+
+/* UNTIL NEXT COMMENT COPIED FROM https://github.com/Magtimus/card-tarjetas-efecto-hover */
+.container_talks{
+    position: absolute;
+    width: 100%;
+    
+    max-width: 100vw;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container_talks .card{
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    transition: all 0.25s;
+    margin-top: 40px;
+}
+
+.container_talks .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container_talks .card img{
+    width: 330px;
+    height: 220px;
+}
+
+
+.container_talks .card h4{
+    margin-top:20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.container_talks .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+}
+
+/* END */
+
+.filters_div {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.autocomplete_p:hover {
+    color: rgb(155, 151, 151);
+}
+
+.creator {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+
+
+.talks_date {
+    margin-top: 15px;
+}
+
+
+
+.container_single_talk {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: 50px 1fr 0.1fr 0.5fr 0.1fr;
+    gap:40px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.title_container {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.talk_description {
+    padding-left: 40px;
+    text-align: justify;
+    padding-top: 20px;
+
+}
+
+.talk_image {
+    margin-right:7vw;
+    float: right;
+    height: 40vh;
+    width: 30vw;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.prerrequesites_container {
+    padding-left: 40px;
+    margin-top: -50px;
+}
+
+.enroll_button {
+    background-color: #3A658D;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+    width: calc(auto +20p);
+}
+
+.talk_h3 {
+    font-family: Shanti;
+}
+
+.details {
+    padding-left: 40px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: -100px;
+}
+
+.enroll {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: -25px;
+}
+
+.footer2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-top: 10px;
+    background-color: grey;
+    box-shadow: 0 50vh 0 50vh grey;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.instructor {
+    padding-left: 40px;
+}
+
+
+#menu1_talks {
+    position: absolute;
+    top: 3%;
+}
+
+#menu2_talks {
+    position: absolute;
+    top: 5%;
+}
+
+#menu3_talks {
+    position: absolute;
+    top: 7%;
+}
+
+/* following three classes copied from https://www.w3schools.com/howto/howto_css_menu_icon.asp*/
+.change #menu1_talks {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    top:5%;
+  }
+  
+.change #menu2_talks {opacity: 0; top: 7%;}
+  
+.change #menu3_talks {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    top:9%;
+}
+
+
+
+.form_talks_fields {
+    border-radius: 5px;
+    text-align: center;
+    height: 30px;
+    margin-right: 30px;
+    background-color:grey;
+    color: #f1f1f1;
+}
+
+
+.menu_inline_talks {
+    margin-top: 1vh;
+
+}
+
+.no_talks {
+    font-size: large;
+    margin-top: 20px;
+    font-family: Shanti;
+}
+
+
+#first {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#new_talk_title {
+    margin-top: 20px;
+    margin-left: 35px;
+    font-family: Shanti;
+}
+
+
+#new_talk_aboutAuthor {
+    width: 50vw;
+    height: 15vh;
+}
+
+#new_talk_prerrequestites {
+    width: 52vw;
+    height: 20vh;  
+}
+
+#new_talk_descr {
+    width: 70vw;
+    height: 35vh;  
+}
+
+#submit {
+    font-size: x-large;
+    background-color: rgb(172, 170, 170);
+}
+
+#div_submit_newTalk {
+    margin-right: 40px;
+    margin-bottom: 30px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+#new_talk_title_form {
+    width: 80vw;
+    text-align: center;
+    margin-left: 4vw;
+    height: 7vh;
+}

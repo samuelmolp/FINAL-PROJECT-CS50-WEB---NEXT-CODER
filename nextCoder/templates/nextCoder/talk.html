@@ -1,0 +1,98 @@
+{% extends 'nextCoder/layout.html'%}
+{% load static %}
+
+{% block js %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      let button = document.querySelector(".enroll");
+      console.log(button);
+      button.addEventListener("click", function(){
+        let title = document.querySelector(".talk_title").innerHTML;
+        fetch(`/enroll/${title}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(result => {
+            window.location.reload();
+            if (result["enrolled"]==true){
+              alert(`Congratulations, you've just enrolled the talk ${title}. Scroll down to see how to attend the meeting`);
+            } else {
+              alert(`You've just unenrolled the talk ${title}.`);
+            }
+        });
+    }, false);
+  });
+  </script>
+{% endblock %}
+
+{% block body %}
+  <div class="container_single_talk">
+    <div class="title_container">
+        <h1 class="talk_title">{{data.title}}</h1>
+    </div>
+
+    <div class="talk_description">{{data.description}}</div>
+
+    <div>
+      <img src="{{data.image}}" class="talk_image">
+    </div>
+
+    <div class="prerrequesites_container">
+      <h3 class="talk_h3">Prerrequesites:</h3>
+      <p>{{data.prerrequesites}}</p>
+    </div>
+
+    {% if not isAttendant %}
+    <div class="enroll">
+      <h4>Enroll now!!</h4>
+      <p>There are only 20 spots left:</p>
+      <button class="enroll_button">Enroll</button>
+    </div>
+    {% else %}
+    <div class="enroll">
+      <h4>Unenroll</h4>
+      <button class="enroll_button" style="background-color: rgb(224, 198, 198);">Unenroll</button>
+    </div>
+    {% endif %}
+
+    <div class="details">
+      <h3 class="talk_h3">Details:</h3>
+      <ul>
+        <li><strong>Date:</strong> {{data.date}} at {{data.start_hour}}</li>
+
+        {% ifnotequal data.duration "-30"%}
+          <li><strong>Duration:</strong> {{data.duration}} hours</li>
+        {% else %}
+          <li><strong>Duration:</strong> {{data.duration}} min</li>
+        {% endifnotequal %}
+
+        <li><strong>Difficulty:</strong> {{data.difficulty}}</li>
+        <li><strong>Language:</strong> {{data.language}}</li>
+        <li>Maximun number of <strong>attendants:</strong> {{data.max_people}} people</li>
+      </ul>
+  </div>
+
+  <div class="instructor">
+    <h3 class="talk_h3">Instructor:</h3>
+    <p>{{data.about_author}}</p>
+  </div>
+
+  {% if isAttendant %}
+    <div class="instructor">
+      <h3 class="talk_h3">How to attend</h3>
+      <p>{{data.how_to_attend_meeting}}</p>
+    </div>
+  {% endif %}
+
+
+  <footer class="footer2">
+    <address>
+        Made by Samuel Molina Perales.
+        Contact me at: <a href="mailto:smolinaperales@gmail.com">smolinaperales@gmail.com</a>
+    </address>
+    <p class="copy">Next coder. All rights deserved &#169; 2021</p>
+  </footer>
+  </div>
+  
+{% endblock %}
+

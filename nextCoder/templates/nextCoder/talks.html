@@ -1,0 +1,40 @@
+{% extends 'nextCoder/layout.html'%}
+{% load static %}
+
+{% block js %}<script src="{% static 'nextCoder/talks.js' %}"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />{% endblock %}
+
+{% block body %}
+<div>
+    <form method="GET" id="search_form" onsubmit="return false">
+        {% csrf_token %}
+        <div style="text-align: center;">
+            <input type="search" autocomplete="off" autofocus placeholder="What do you want to learn?" id="search_title">
+        </div>
+            <div class="suggestions" style="display: none;">
+                <div class="suggestions_list">
+    
+                </div>
+            </div>  
+        
+        <div class="filters_div">
+            {{form.as_table}}
+        </div>
+
+        <div style="display: None;"><input id="submit" type="submit" value="SUBMIT" ></div>
+    </form>
+    <h1 class="talks_title"></h1>
+    <div class="talks_content container_talks">
+    </div>   
+        
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+          offset:200,
+          duration:1000
+      });
+    </script>
+</div>
+{% endblock %}
+

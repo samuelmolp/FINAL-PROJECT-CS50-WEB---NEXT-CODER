@@ -1,0 +1,36 @@
+{% extends 'nextCoder/layout.html'%}
+{% load static %}
+
+{% block body %}
+    <h1 class="loginTitle">Next coder</h1>
+
+    <h2 style="margin-left: 30px; font-family: Shanti;">Login</h2>
+
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post" class="">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-control login_input" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input class="form-control login_input" type="password" name="password" placeholder="Password">
+        </div>
+        <div style="margin-right: 10vw; text-align: right; margin-top: 25px;"><input class="btn btn-primary" type="submit" value="Login"></div>
+    </form>
+
+    <div style="margin-top: 20px; margin-left: 20px; font-size: large;">
+        Don't have an account? <a style="color: blue; " href="{% url 'register' %}">Register here.</a>
+    </div>
+
+    <div class="footer" style="margin-top: 24vh;">
+        <address>
+            Made by Samuel Molina Perales.
+            Contact me at: <a href="mailto:smolinaperales@gmail.com">smolinaperales@gmail.com</a>
+        </address>
+        <p class="copy">Next coder. All rights deserved &#169; 2021</p>`
+    </div>
+
+{% endblock %}

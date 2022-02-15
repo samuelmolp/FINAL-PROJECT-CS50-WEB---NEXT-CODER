@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Next Coder{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="{% static 'nextCoder/styles.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        {% block js%} {% endblock %}
+        <meta name="description" content="NextCoder is a webpage to learn to program. You can attend meetings (talks), 
+        give or receive private tutoring and consult/constribute to our open source notes 
+        about a wide range of topics and programming languages"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+            let menu_button = document.querySelector(".menu_before");
+            let menu = document.querySelector(".menu");
+            let content = document.querySelector(".menu_content");
+
+            menu_button.addEventListener("click", function(){
+                if (menu_button.classList.contains("change")){
+                    menu_button.classList.remove("change");
+                    
+                    document.querySelectorAll(".menu_icon").forEach(function(div){
+                        div.style.background = "black";
+                    });
+
+                    menu.classList.remove("active");
+                    content.style.display = "none";
+                    
+                } else {
+                    menu_button.classList.add("change");
+                    
+                    document.querySelectorAll(".menu_icon").forEach(function(div){
+                        div.style.background = "#E5E5E5";
+                    });
+
+                    menu.classList.add("active");
+                    content.style.display = "flex";
+                } 
+            });
+        });
+        </script>
+    </head>
+    <body style="background: #f1f1f1; overflow-x: hidden; max-width: 100%;">
+        <div class="my_navbar">
+            <div class="TODO2"><div style="margin-top: 1vh;"></div></div>
+            <div class="menu" style="display: block;">
+                <div class="menu_before">
+                    <div class="menu_icon" id="menu1_talks"></div>
+                    <div class="menu_icon" id="menu2_talks"></div>
+                    <div class="menu_icon" id="menu3_talks"></div>
+                </div>
+                <div class="menu_content" style="display: none;">
+
+                    <h4 id="first_item" class="menu_item"><a href="{% url 'index' %}" class="menu_link">HOME</a></h4>
+                    <h4 class="menu_item" id="second_item"><a href="{% url 'talks' %}" class="menu_link">TALKS</a></h4>
+                    <h4 class="menu_item" id="third_item"><a href="{% url 'my_talks' %}" class="menu_link">ENRROLLED TALKS</a></h4>
+
+                    {% if user.is_authenticated %}
+                    <h4 class="menu_item fourth_item"><a href="{% url 'logout' %}" class="menu_link">LOGOUT</a></h4>
+                    {% else %}
+                    <h4 class="menu_item fourth_item"><a href="{% url 'login %'}" class="menu_link">LOGIN/REGISTER</a></h4>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>        
+
+        <div>
+            <div>
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

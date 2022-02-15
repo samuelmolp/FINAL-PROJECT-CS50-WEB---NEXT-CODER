@@ -1,0 +1,51 @@
+{% extends 'nextCoder/layout.html' %}
+{% load static %}
+
+{% block js %}<script src="{% static 'nextCoder/new_talk.js' %}"></script>{% endblock %}
+
+{% block body %}
+
+{% if error %}
+<p>{{error}}</p>
+
+{% else %}
+
+
+<h1 id="new_talk_title">Create your own talk!</h1>
+
+<div id="first">
+    <form id="first_form" style="margin-top: 20px;" action="{% url 'new_talk' type=1 %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <br>
+        <br>
+
+        <input type="file" name="img" id="img">
+        <div id="div_submit_newTalk"><input id="submit" type="submit" value="SUBMIT"></div>
+    </form>
+</div>
+
+
+
+<div style="display: none; margin-left: 25px;" id="second">
+    <p id="tags_descr">Select some tags for your talk. These are important as they work as keywords when searching for talks.</p>
+    <p class="tags_text">Select a maximum of three <strong>areas of study:</strong></p>
+    <div id="tags1_list" class="container">
+    
+    </div>
+
+    <br>
+
+    <p class="tags_text">Select a maximum of three <strong>programming languages:</strong></p>
+    <div id="tags2_list" class="container">
+        
+    </div>
+
+    <div id="finish_div">
+        <button id="finish">FINISH</button>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

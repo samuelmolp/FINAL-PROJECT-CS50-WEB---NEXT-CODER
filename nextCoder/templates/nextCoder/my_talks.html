@@ -1,0 +1,23 @@
+{% extends 'nextCoder/layout.html'%}
+{% load static %}
+
+{% block js %}<script src="{% static 'nextCoder/myTalks.js' %}"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />{% endblock %}
+
+{% block body %}
+<div>
+    <h1 class="talks_title">ENROLLED talks</h1>
+    <div class="talks_content container_talks">
+</div>   
+        
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+          offset:200,
+          duration:1000
+      });
+    </script>
+</div>
+{% endblock %}
+
