@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("keyup", function(e){
         //When we enter text into the search bar, show the autocomplete
         if (e.key != 'Enter' || e.keyCode != 13) {
-            console.log($("#search_title").val());
             if($("#search_title").val()!=""){
                 filters.style.display = "none";
             } else {
@@ -125,7 +124,6 @@ function show_talks(result){
 
 
         div.addEventListener("click", function(){
-            console.log(div.children);
             window.location.href = `/talk/${div.dataset.title}`;
         });
         content.append(div);

@@ -429,7 +429,6 @@ def filter_talks(request, page):
         if e.serialize() not in results:
             results.append(e.serialize())
 
-    print(results)
     results.reverse()
         
     #Return the data (or an error)
@@ -500,8 +499,6 @@ def talk(request, title):
 
         except Talks.DoesNotExist:
             data = "error"
-
-        print(data)
 
         return render(request, "nextCoder/talk.html", {
             "data":data[0], 

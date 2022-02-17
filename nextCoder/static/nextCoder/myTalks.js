@@ -37,7 +37,6 @@ function show_talks(result){
 
 
         div.addEventListener("click", function(){
-            console.log(div.children);
             window.location.href = `/talk/${div.dataset.title}`;
         });
         content.append(div);
