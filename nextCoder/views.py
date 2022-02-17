@@ -330,7 +330,9 @@ def filter_talks(request, page):
             return JsonResponse({"ERROR":"No matching talks"})
 
     elif data["type"]=="filter":
-        #if type is filter, we filter based on different parametres
+        """
+        If type is filter, we filter based on different parametres
+        """
         all_talks = list(Talks.objects.all())
         filtered_talks_dl = list(all_talks)
 
@@ -364,6 +366,7 @@ def filter_talks(request, page):
                     except ValueError:
                         pass  
 
+        #Filter by date
         filtered_talks_dltad = list(filtered_talks_dlta)  
         for element in filtered_talks_dlta:
             if data["date"]=="Today":
@@ -391,6 +394,7 @@ def filter_talks(request, page):
                     filtered_talks_dltad.remove(element)
 
 
+        #Filter by max_people
         final_filtered_talks = list(filtered_talks_dltad)
         for element in filtered_talks_dltad:
             if data["max_people"]=="0-10":
@@ -492,6 +496,9 @@ class searchTalkForm(forms.Form):
 
 
 def talk(request, title):
+    """
+    Get information about a talk by it's title
+    """
     if request.method=="GET":
         try:
             talk = Talks.objects.get(title=title)
@@ -507,6 +514,9 @@ def talk(request, title):
 
 @csrf_exempt
 def enroll(request, title):
+    """
+    Function to enroll in a course
+    """
     if request.method=="POST":
         talk = Talks.objects.get(title=title)
         user = request.user
@@ -519,12 +529,18 @@ def enroll(request, title):
             return JsonResponse({"enrolled":True})
 
 def my_talks(request):
+    """
+    Load mytalks view
+    """
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
     return render(request, "nextCoder/my_talks.html")
 
 @csrf_exempt
 def get_enrrolled_talks(request):
+    """
+    Get all of the talks in which the current user is enrolled
+    """
     user = request.user
     talks= Talks.objects.all()
 
